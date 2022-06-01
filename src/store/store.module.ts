@@ -1,3 +1,4 @@
+import { ImpuestoPipe } from './impuesto.pipe';
 import { ModelModule } from './../model/model.module';
 import { StoreComponent } from './store.component';
 import { FormsModule } from '@angular/forms';
@@ -6,7 +7,7 @@ import { NgModule } from "@angular/core";
 
 @NgModule({
   imports: [BrowserModule, FormsModule, ModelModule],
-  declarations: [StoreComponent],
+  declarations: [StoreComponent, ImpuestoPipe],
   exports: [StoreComponent],
 })
 

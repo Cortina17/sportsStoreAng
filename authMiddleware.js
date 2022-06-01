@@ -6,12 +6,14 @@ const mappings = {
   get: ["/api/orders", "/orders"],
   post: ["/api/products", "/products", "/api/categories", "/categories"],
 };
+
 function requiresAuth(method, url) {
   return (
     (mappings[method.toLowerCase()] || []).find((p) => url.startsWith(p)) !==
     undefined
   );
 }
+
 module.exports = function (req, res, next) {
   if (req.url.endsWith("/login") && req.method == "POST") {
     if (

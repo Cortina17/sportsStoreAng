@@ -1,6 +1,8 @@
 import { StaticDataSource } from './static.datasource';
 import { Product } from './product.model';
+import { Injectable } from '@angular/core';
 
+@Injectable()
 export class ProductRepository {
 
   private products: Product[] = [];
@@ -23,6 +25,7 @@ export class ProductRepository {
     return this.categories;
   }
 
+  //getProducts(category?: string = null): Product[] {
   getProducts(category: string = null): Product[] {
     return this.products.filter((p) => category == null || category == p.category)
   }

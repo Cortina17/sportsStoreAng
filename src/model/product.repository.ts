@@ -14,4 +14,16 @@ export class ProductRepository {
       }
     );
   }
+
+  getProduct(id: number): Product | undefined { //uso | undefined si tengo activado el chequeo del typeScript
+    return this.products.find(p => p.id == id)//busca el producto por su id, en el vector de productos
+  }
+
+  getCategories(): string[] {
+    return this.categories;
+  }
+
+  getProducts(category: string = null): Product[] {
+    return this.products.filter((p) => category == null || category == p.category)
+  }
 }

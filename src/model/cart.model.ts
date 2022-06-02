@@ -38,6 +38,12 @@ export class Cart {
       this.cartPrice += (l.quantity * l.product.price);
     })
   }
+
+  clear() {
+    this.lines = [];
+    this.itemCount = 0;
+    this.cartPrice = 0;
+  }
 }
 
 export class CartLine {

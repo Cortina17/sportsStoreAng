@@ -20,10 +20,10 @@
     </div>
     <div class="col-9 p-2">
       <div>
-        <div *ngFor="let product of products" class="card m-1 p-1 bg-light mb-3">
-          <h4>
+        <div *ngFor="let product of products" class="card m-1 p-1 bg-secondary mb-3">
+          <h4 class="text-white">
             {{product.name}}
-            <span class="badge badge-pill badge-primary float-right">
+            <span class="badge badge-pill badge-info float-right">
               {{product.price | currency:"USD":"symbol":"2.2-2"}}
             </span>
           </h4>
@@ -51,9 +51,9 @@
             [class.active]="page == selectedPage">
             {{page}}
           </button> -->
-          <button *counter="let page of pageCount" (click)="changePage(page)"
-            class="btn btn-outline-primary">{{page}}</button>
+          <button *counter="let page of pageCount" (click)="changePage(page)" class="btn btn-info">{{page}}</button>
         </div>
+
         <!-- <div class="row">
           <div class="col-3 bg-info p-2 text-white">Actualmente tenemos {{categories.length}} Categorías -->
       </div>

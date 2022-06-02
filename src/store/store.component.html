@@ -1,4 +1,4 @@
-<div class="container-fluid bg-light border border-danger h-100">
+<div class="container-fluid bg-light">
   <div class="row sticky-top">
     <div class="col bg-dark text-white text-center fw-bold">
       <h2 class="navbar-brand p-2 mt-1">SPORTS STORE</h2>
@@ -13,17 +13,17 @@
   </div-->
   <!-- {{products | json}} -->
 
-  <div class="row h-100">
-    <div class="col-3 p-2 bg-info h-100">
+  <div class="row">
+    <div class="col-3 p-2 bg-info">
       <button class="btn btn-block btn-warning mt-1" (click)="changeCategory()">HOME</button>
       <button *ngFor="let cat of categories" class="btn btn-block btn-warning" [class.active]="cat==selectedCategory"
         (click)="changeCategory(cat)">{{cat}}</button>
     </div>
-    <div class="col-9 p-2 border border-danger h-100">
+    <div class="col-9 p-2">
       <div *ngFor="let product of products" class="card m-1 p-1 bg-secondary mb-3">
-        <h4 class="text-white ml-2">
+        <h4 class="text-white m-3">
           {{product.name}}
-          <span class="badge badge-pill badge-info float-right">
+          <span class="badge badge-pill badge-info float-right m-3">
             {{product.price | currency:"USD":"symbol":"2.2-2"}}
           </span>
         </h4>

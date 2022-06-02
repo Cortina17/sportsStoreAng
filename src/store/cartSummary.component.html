@@ -1,11 +1,11 @@
 <div class="float-right">
   <small>
-    Su carro contiene:
+    Your shopping cart has:
     <span *ngIf="cart.itemCount > 0">
-      {{cart.itemCount}} item(s) por valor de:
+      {{cart.itemCount}} item(s) worth:
       {{cart.cartPrice | currency: 'USD':'symbol' : '2.2-2'}}
     </span>
-    <span *ngIf="cart.itemCount == 0">Nada</span>
+    <span *ngIf="cart.itemCount == 0">Nothing</span>
   </small>
   <button class="btn btn-sm bg-dark text-white" [disabled]="cart.itemCount == 0" routerLink="/cart"
     routerLinkActive="router-link-active">

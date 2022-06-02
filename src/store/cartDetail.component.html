@@ -6,24 +6,24 @@
   </div>
   <div class="row">
     <div class="col mt-2">
-      <h2 class="text-center">Su compra</h2>
+      <h2 class="text-center">Shopping Cart</h2>
     </div>
     <table class="table table-bordered table-stripped m-3">
       <thead>
         <tr>
-          <th>Cantidad</th>
-          <th>Producto</th>
-          <th class="text-right">Precio</th>
-          <th class="text-right">Subtotal</th>
+          <th class="text-center">Quantity</th>
+          <th class="text-center">Product</th>
+          <th class="text-center">Price</th>
+          <th class="text-center">Subtotal</th>
         </tr>
       </thead>
-      <tbody>
+      <tbody class="text-center">
         <tr *ngFor="let line of cart.lines">
-          <td><input type="number" class="form-control-sm w-25" [value]="line.quantity"
+          <td><input type="number" class="form-control-sm w-25 text-center" [value]="line.quantity"
               (change)="cart.updateQuantity(line.product, $event.target.value)"></td>
           <td>{{line.product.name}}</td>
-          <td class="text-right">{{line.product.price | currency:"USD":"symbol":"2.2-2"}}</td>
-          <td class="text-right">{{line.lineTotal | currency:"USD":"symbol":"2.2-2"}}</td>
+          <td class="text-center">{{line.product.price | currency:"USD":"symbol":"2.2-2"}}</td>
+          <td class="text-center">{{line.lineTotal | currency:"USD":"symbol":"2.2-2"}}</td>
           <td class="text-center">
             <button class="btn btn-danger" (click)="cart.removeLine(line.product.id)">Delete</button>
           </td>
@@ -32,7 +32,7 @@
       <tfoot>
         <tr>
           <td colspan="3">Total:</td>
-          <td class="text-right">{{cart.cartPrice | currency:"USD":"symbol":"2.2-2"}}</td>
+          <td class="text-center">{{cart.cartPrice | currency:"USD":"symbol":"2.2-2"}}</td>
         </tr>
       </tfoot>
     </table>

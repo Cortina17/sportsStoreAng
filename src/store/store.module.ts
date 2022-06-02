@@ -1,3 +1,4 @@
+import { RouterModule } from '@angular/router';
 import { ImpuestoPipe } from './impuesto.pipe';
 import { ModelModule } from './../model/model.module';
 import { StoreComponent } from './store.component';
@@ -10,7 +11,7 @@ import { CartDetailComponent } from './cartDetail.component';
 import { CheckoutComponent } from './checkout.component';
 
 @NgModule({
-  imports: [BrowserModule, FormsModule, ModelModule],
+  imports: [BrowserModule, FormsModule, ModelModule, RouterModule],
   declarations: [StoreComponent, ImpuestoPipe, CounterDirective, CartSummaryComponent, CartDetailComponent, CheckoutComponent],
   exports: [StoreComponent, CartDetailComponent, CheckoutComponent],
 })

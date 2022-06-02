@@ -22,7 +22,6 @@
     <div class="col-9 p-2">
       <div>
         <div *ngFor="let product of products" class="card m-1 p-1 bg-light">
-
           <h4>
             {{product.name}}
             <span class="badge badge-pill badge-primary float-right">
@@ -37,10 +36,26 @@
           <div class="card-text bg-white p-1">{{product.description}}</div>
         </div>
       </div>
+
+      <div class="d-flex justify-content-around">
+        <div class="mr-auto p-2">
+          <select class="form-control" [value]="productsPerPage" (change)="changePageSize($event.target.value)">
+            <option value="3">3 per Page</option>
+            <option value="4">4 per Page</option>
+            <option value="6">6 per Page</option>
+            <option value="8">8 per Page</option>
+          </select>
+        </div>
+
+        <div class="btn-group float-right ml-auto p-2">
+          <button *ngFor="let page of pageNumbers" (click)="changePage(page)" class="btn btn-outline-primary"
+            [class.active]="page == selectedPage">
+            {{page}}
+          </button>
+        </div>
+        <!-- <div class="row">
+          <div class="col-3 bg-info p-2 text-white">Actualmente tenemos {{categories.length}} Categorías -->
+      </div>
     </div>
   </div>
-
-  <!-- <div class="row">
-  <div class="col-3 bg-info p-2 text-white">Actualmente tenemos {{categories.length}} Categorías -->
-
 </section>

@@ -12,7 +12,7 @@ export class StoreComponent {
   constructor(private repository: ProductRepository) { }
 
   public selectedCategory = null;
-  public productsPerPage = 4;
+  public productsPerPage = 5;
   public selectedPage = 1;
 
   get products(): Product[] {

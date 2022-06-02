@@ -9,8 +9,7 @@
   <div class="row text-white">
     <div class="col-3 bg-info p-2">{{categories.length}} Categorías</div>
     <div class="col-9 bg-success p-2">{{products.length}} Productos</div>
-  </div>
-  -->
+  </div-->
   <!-- {{products | json}} -->
 
   <div class="row">
@@ -48,10 +47,12 @@
         </div>
 
         <div class="btn-group float-right ml-auto p-2">
-          <button *ngFor="let page of pageNumbers" (click)="changePage(page)" class="btn btn-outline-primary"
+          <!-- <button *ngFor="let page of pageNumbers" (click)="changePage(page)" class="btn btn-outline-primary"
             [class.active]="page == selectedPage">
             {{page}}
-          </button>
+          </button> -->
+          <button *counter="let page of pageCount" (click)="changePages()"
+            class="btn btn-outline-primary">{{page}}</button>
         </div>
         <!-- <div class="row">
           <div class="col-3 bg-info p-2 text-white">Actualmente tenemos {{categories.length}} Categorías -->

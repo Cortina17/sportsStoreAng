@@ -51,7 +51,7 @@
             [class.active]="page == selectedPage">
             {{page}}
           </button> -->
-          <button *counter="let page of pageCount" (click)="changePages()"
+          <button *counter="let page of pageCount" (click)="changePage(page)"
             class="btn btn-outline-primary">{{page}}</button>
         </div>
         <!-- <div class="row">

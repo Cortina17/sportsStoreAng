@@ -1,7 +1,7 @@
-<section class="container-fluid">
+<section class="container-fluid bg-light">
   <div class="row">
     <div class="col bg-dark text-white text-center fw-bold">
-      <h2 class="navbar-brand p-2">SPORTS STORE</h2>
+      <h2 class="navbar-brand p-2 mt-1">SPORTS STORE</h2>
     </div>
   </div>
 
@@ -13,14 +13,14 @@
   <!-- {{products | json}} -->
 
   <div class="row">
-    <div class="col-3 p-2">
-      <button class="btn btn-block btn-outline-primary" (click)="changeCategory()">HOME</button>
-      <button *ngFor="let cat of categories" class="btn btn-block btn-outline-primary"
-        [class.active]="cat==selectedCategory" (click)="changeCategory(cat)">{{cat}}</button>
+    <div class="col-3 p-2 bg-info">
+      <button class="btn btn-block btn-warning mt-1" (click)="changeCategory()">HOME</button>
+      <button *ngFor="let cat of categories" class="btn btn-block btn-warning" [class.active]="cat==selectedCategory"
+        (click)="changeCategory(cat)">{{cat}}</button>
     </div>
     <div class="col-9 p-2">
       <div>
-        <div *ngFor="let product of products" class="card m-1 p-1 bg-light">
+        <div *ngFor="let product of products" class="card m-1 p-1 bg-light mb-3">
           <h4>
             {{product.name}}
             <span class="badge badge-pill badge-primary float-right">

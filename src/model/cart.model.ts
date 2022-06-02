@@ -13,6 +13,22 @@ export class Cart {
     } else {
       this.lines.push(new CartLine(product, quantity)); //cuando es un nuevo producto para el carro
     }
+    this.recalculate();
+  }
+
+  removeProduct(id: number) {
+    let index = this.lines.findIndex(line => line.product.id == id);
+    this.lines.splice(index, 1);
+    this.recalculate();
+  }
+
+  private recalculate() {
+    this.itemCount = 0;
+    this.cartPrice = 0;
+    this.lines.forEach(l => {
+      this.itemCount += l.quantity;
+      this.cartPrice += (l.quantity * l.product.price);
+    })
   }
 }
 

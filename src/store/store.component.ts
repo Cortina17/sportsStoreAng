@@ -1,3 +1,4 @@
+import { Cart } from './../model/cart.model';
 import { Product } from './../model/product.model';
 import { ProductRepository } from './../model/product.repository';
 import { Component } from "@angular/core";
@@ -9,11 +10,15 @@ import { Component } from "@angular/core";
 
 export class StoreComponent {
 
-  constructor(private repository: ProductRepository) { }
+  constructor(private repository: ProductRepository, private cart: Cart) { }
 
   public selectedCategory = null;
   public productsPerPage = 5;
   public selectedPage = 1;
+
+  addToCart(product: Product) {
+    this.cart.addLine(product);
+  }
 
   get products(): Product[] {
     //return this.repository.getProducts(this.selectedCategory);

@@ -1,7 +1,7 @@
 <div class="container-fluid bg-light">
   <div class="row sticky-top">
-    <div class="col bg-dark text-white text-center fw-bold">
-      <h2 class="navbar-brand p-2 mt-1">SPORTS STORE</h2>
+    <div class="col bg-dark text-white">
+      <h2 class="navbar-brand p-2 mt-1 fw-bold fs-6">SPORTS STORE</h2>
       <cart-summary></cart-summary>
     </div>
   </div>
@@ -32,7 +32,8 @@
               {{product.price | agregarImpuesto:(20)}} recibe 20, si no coge el valor default
             </span> -->
 
-        <div class="card-text bg-white p-1">{{product.description}}
+        <div class="card-text bg-white p-1">
+          {{product.description}}
           <button class="btn btn-success float-right m-3" (click)="addToCart(product)">Add to cart</button>
         </div>
       </div>

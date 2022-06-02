@@ -1,3 +1,4 @@
+import { StoreFirstGuard } from './storeFirst.guard';
 import { CheckoutComponent } from './../store/checkout.component';
 import { CartDetailComponent } from './../store/cartDetail.component';
 import { StoreComponent } from './../store/store.component';
@@ -16,7 +17,7 @@ import { RouterModule } from '@angular/router';
       { path: 'checkout', component: CheckoutComponent },
       { path: '**', redirectTo: '/store' },
     ])],
-  providers: [],
+  providers: [StoreFirstGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

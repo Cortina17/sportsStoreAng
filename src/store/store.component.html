@@ -1,5 +1,5 @@
-<section class="container-fluid bg-light">
-  <div class="row">
+<div class="container-fluid bg-light border border-danger h-100">
+  <div class="row sticky-top">
     <div class="col bg-dark text-white text-center fw-bold">
       <h2 class="navbar-brand p-2 mt-1">SPORTS STORE</h2>
       <cart-summary></cart-summary>
@@ -13,29 +13,27 @@
   </div-->
   <!-- {{products | json}} -->
 
-  <div class="row">
-    <div class="col-3 p-2 bg-info">
+  <div class="row h-100">
+    <div class="col-3 p-2 bg-info h-100">
       <button class="btn btn-block btn-warning mt-1" (click)="changeCategory()">HOME</button>
       <button *ngFor="let cat of categories" class="btn btn-block btn-warning" [class.active]="cat==selectedCategory"
         (click)="changeCategory(cat)">{{cat}}</button>
     </div>
-    <div class="col-9 p-2 min-h-100">
-      <div>
-        <div *ngFor="let product of products" class="card m-1 p-1 bg-secondary mb-3">
-          <h4 class="text-white ml-2">
-            {{product.name}}
-            <span class="badge badge-pill badge-info float-right">
-              {{product.price | currency:"USD":"symbol":"2.2-2"}}
-            </span>
-          </h4>
+    <div class="col-9 p-2 border border-danger h-100">
+      <div *ngFor="let product of products" class="card m-1 p-1 bg-secondary mb-3">
+        <h4 class="text-white ml-2">
+          {{product.name}}
+          <span class="badge badge-pill badge-info float-right">
+            {{product.price | currency:"USD":"symbol":"2.2-2"}}
+          </span>
+        </h4>
 
-          <!-- <span class="badge badge-pill badge-primary float-left">
+        <!-- <span class="badge badge-pill badge-primary float-left">
               {{product.price | agregarImpuesto:(20)}} recibe 20, si no coge el valor default
             </span> -->
 
-          <div class="card-text bg-white p-1">{{product.description}}
-            <button class="btn btn-success float-right m-3" (click)="addToCart(product)">Add to cart</button>
-          </div>
+        <div class="card-text bg-white p-1">{{product.description}}
+          <button class="btn btn-success float-right m-3" (click)="addToCart(product)">Add to cart</button>
         </div>
       </div>
 
@@ -56,10 +54,8 @@
           </button> -->
           <button *counter="let page of pageCount" (click)="changePage(page)" class="btn btn-info">{{page}}</button>
         </div>
-
         <!-- <div class="row">
           <div class="col-3 bg-info p-2 text-white">Actualmente tenemos {{categories.length}} Categorías -->
       </div>
     </div>
   </div>
-</section>

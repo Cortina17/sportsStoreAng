@@ -2,13 +2,13 @@
   <small>
     Your shopping cart has:
     <span *ngIf="cart.itemCount > 0">
-      {{cart.itemCount}} item(s) worth:
+      {{cart.itemCount}} item(s) worth
       {{cart.cartPrice | currency: 'USD':'symbol' : '2.2-2'}}
     </span>
     <span *ngIf="cart.itemCount == 0">Nothing</span>
   </small>
   <button class="btn btn-sm bg-dark text-white" [disabled]="cart.itemCount == 0" routerLink="/cart"
     routerLinkActive="router-link-active">
-    <i class="fa fa-shopping-cart"></i>
+    <i class="fa fa-shopping-cart m-3"></i>
   </button>
 </div>

@@ -1,16 +1,16 @@
-<div class="container-fluid bg-light">
-  <div class="row sticky-top bg-dark text-white d-flex justify-content-between align-items-center">
+<div class="container-fluid bg-light sticky-top">
+  <div class="row bg-dark text-white d-flex justify-content-between align-items-center">
     <a class="navbar-brand p-2">SPORTS STORE</a>
     <cart-summary></cart-summary>
   </div>
 </div>
-<div *ngIf="orderSent" class="m-3 text-center border border-blue">
+<div *ngIf="orderSent" class="m-3 text-center border border-info rounded border-4">
   <h2>Thank you!</h2>
   <p>Your order will be shipped soon!</p>
-  <button class="btn btn-success" routerLink="/store">Home</button>
+  <button class="btn btn-success mb-3" routerLink="/store">Home</button>
 </div>
-<form *ngIf="!orderSent" #form="ngForm" novalidate (ngSubmit)="submitOrder(form)" class="m-2">
-  <div class="form-group">
+<form *ngIf="!orderSent" #form="ngForm" novalidate (ngSubmit)="submitOrder(form)" class="m-3">
+  <div class="form-group mt-2">
     <label>Name</label>
     <input class="form-control" #name="ngModel" name="name" [(ngModel)]="order.name" required minlength="4"
       pattern="^[a-zA-Z]+$">
@@ -47,7 +47,7 @@
       Please enter your country.
     </span>
   </div>
-  <div class="text-center">
+  <div class="text-center mb-3">
     <button class="btn btn-danger m-1" routerLink="/cart">Back</button>
     <button class="btn btn-success m-1" type="submit">Submit Order</button>
   </div>

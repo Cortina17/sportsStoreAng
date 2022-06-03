@@ -9,57 +9,71 @@
   <p>Your order will be shipped soon!</p>
   <button class="btn btn-success mb-3" routerLink="/store">Home</button>
 </div>
-<form *ngIf="!orderSent" #form="ngForm" novalidate (ngSubmit)="submitOrder(form)" class="m-3">
-  <div class="form-group mt-2">
-    <label>Name</label>
-    <input type="text" placeholder="Andrea" class="form-control" #name="ngModel" name="name" [(ngModel)]="order.name"
-      required minlength="4" pattern="^[a-zA-Z]+$">
-    <ul class="text-danger list-unstyled" *ngIf="name.dirty && name.invalid">
-      <li *ngIf="name.errors.required">Please, enter your name.</li>
-      <li *ngIf="name.errors.pattern">Please, enter your name without special characters.</li>
-      <li *ngIf="name.errors.minlength">Please, enter your name with 5 or more letters.</li>
-    </ul>
-  </div>
-  <div class="form-group">
-    <div class="input-group flex-nowrap">
-      <span class="input-group-text" id="addon-wrapping">Address</span>
-      <input type="text" placeholder="Downing St Nº10" class="form-control rounded" #name="ngModel" name="address"
-        [(ngModel)]="order.address" required aria-describedby="addon-wrapping">
+<div class="d-flex justify-content-center mt-3 mb-3">
+  <form *ngIf="!orderSent" #form="ngForm" novalidate (ngSubmit)="submitOrder(form)" class="m-3">
+    <div class="form-group mt-2">
+      <div class="input-group flex-nowrap">
+        <span class="input-group-text" id="addon-wrapping">Name</span>
+        <input type="text" placeholder="Andrea" class="form-control rounded" #name="ngModel" name="name"
+          [(ngModel)]="order.name" required minlength="5" pattern="^[a-zA-Z]+$" aria-describedby="addon-wrapping">
+        <ul class="text-danger list-unstyled" *ngIf="name.dirty && name.invalid">
+          <li *ngIf="name.errors.required">Please, enter your name.</li>
+          <li *ngIf="name.errors.pattern">Please, enter your name without special characters.</li>
+          <li *ngIf="name.errors.minlength">Please, enter your name with 5 or more letters.</li>
+        </ul>
+      </div>
     </div>
-    <span *ngIf=" submitted && address.invalid" class="text-danger">Please, enter your address.</span>
-  </div>
-  <div class="form-group">
-    <label>Zip/Postal Code</label>
-    <input type="number" placeholder="33456" class="form-control" #zip="ngModel" name="zip" [(ngModel)]="order.zip"
-      required />
-    <span *ngIf="submitted && zip.invalid" class="text-danger">
-      Please enter your zip/postal code.
-    </span>
-  </div>
-  <div class="form-group">
-    <label>City</label>
-    <input type="text" placeholder="Berlin" class="form-control" #name="ngModel" name="city" [(ngModel)]="order.city"
-      required>
-    <span *ngIf="submitted && city.invalid" class="text-danger">Please, enter your city.</span>
-  </div>
-  <div class="form-group">
-    <label>State</label>
-    <input type="text" placeholder="Oklahoma" class="form-control" #state="ngModel" name="state"
-      [(ngModel)]="order.state" required />
-    <span *ngIf="submitted && state.invalid" class="text-danger">
-      Please enter your state.
-    </span>
-  </div>
-  <div class="form-group">
-    <label>Country</label>
-    <input type="text" class="form-control" placeholder="Finland" #country="ngModel" name="country"
-      [(ngModel)]="order.country" required />
-    <span *ngIf="submitted && country.invalid" class="text-danger">
-      Please enter your country.
-    </span>
-  </div>
-  <div class="text-center mb-3">
-    <button class="btn btn-danger m-1" routerLink="/cart">Back</button>
-    <button class="btn btn-success m-1" type="submit">Submit Order</button>
-  </div>
-</form>
+    <div class="form-group">
+      <div class="input-group flex-nowrap">
+        <span class="input-group-text" id="addon-wrapping">Address</span>
+        <input type="text" placeholder="Downing St Nº10" class="form-control rounded" #name="ngModel" name="address"
+          [(ngModel)]="order.address" required minlength="5" pattern="^[a-zA-Z]+$" aria-describedby="addon-wrapping">
+      </div>
+      <ul class="text-danger list-unstyled" *ngIf="address.dirty && address.invalid">
+        <li *ngIf="address.errors.required">Please, enter your address.</li>
+        <li *ngIf="address.errors.pattern">Please, enter your address without special characters.</li>
+        <li *ngIf="address.errors.minlength">Please, enter your address with 5 or more letters.</li>
+      </ul>
+    </div>
+    <div class="form-group">
+      <div class="input-group flex-nowrap">
+        <span class="input-group-text" id="addon-wrapping">Zip/Postal Code</span>
+        <input type="text" placeholder="33456" class="form-control rounded" #name="ngModel" name="zip"
+          [(ngModel)]="order.zip" required minlength="5" pattern="^[a-zA-Z]+$" aria-describedby="addon-wrapping">
+        <span *ngIf=" submitted && zip.invalid" class="text-danger">Please, enter your zip code.</span>
+      </div>
+    </div>
+    <div class="form-group">
+      <div class="input-group flex-nowrap">
+        <span class="input-group-text" id="addon-wrapping">City</span>
+        <input type="text" placeholder="Berlin" class="form-control rounded" #name="ngModel" name="city"
+          [(ngModel)]="order.city" required minlength="5" pattern="^[a-zA-Z]+$" aria-describedby="addon-wrapping">
+        <span *ngIf=" submitted && city.invalid" class="text-danger">Please, enter your city.</span>
+      </div>
+    </div>
+    <div class="form-group">
+      <div class="input-group flex-nowrap">
+        <span class="input-group-text" id="addon-wrapping">State</span>
+        <input type="text" placeholder="Oklahoma" class="form-control" #name="ngModel" name="state"
+          [(ngModel)]="order.state" required minlength="5" pattern="^[a-zA-Z]+$" aria-describedby="addon-wrapping">
+        <span *ngIf="submitted && state.invalid" class="text-danger">
+          Please enter your state.
+        </span>
+      </div>
+    </div>
+    <div class="form-group">
+      <div class="input-group flex-nowrap">
+        <span class="input-group-text" id="addon-wrapping">Country</span>
+        <input type="text" placeholder="Finland" class="form-control" #name="ngModel" name="country"
+          [(ngModel)]="order.country" required minlength="5" pattern="^[a-zA-Z]+$" aria-describedby="addon-wrapping">
+        <span *ngIf="submitted && country.invalid" class="text-danger" id="error">
+          Please enter your country.
+        </span>
+      </div>
+    </div>
+    <div class="text-center mt-3 mb-3">
+      <button class="btn btn-danger m-1" routerLink="/cart">Back</button>
+      <button class="btn btn-success m-1" type="submit">Submit Order</button>
+    </div>
+  </form>
+</div>

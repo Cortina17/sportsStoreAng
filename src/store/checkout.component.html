@@ -19,12 +19,14 @@
       <li *ngIf="name.errors.pattern">Por favor tipee su nombre con letras y espacios.</li>
       <li *ngIf="name.errors.minlength">Por favor tipee su nombre con mas de 5 letras.</li>
     </ul>
-
   </div>
   <div class="form-group">
     <label>Address</label>
-    <input type="text" placeholder="Downing St Nº10" class="form-control" #name="ngModel" name="address"
-      [(ngModel)]="order.address" required>
+    <div class="input-group flex-nowrap">
+      <span class="input-group-text" id="addon-wrapping">@</span>
+      <input type="text" placeholder="Downing St Nº10" class="form-control" #name="ngModel" name="address"
+        [(ngModel)]="order.address" required aria-describedby="addon-wrapping">
+    </div>
     <span *ngIf=" submitted && address.invalid" class="text-danger">Please, enter your address.</span>
   </div>
   <div class="form-group">

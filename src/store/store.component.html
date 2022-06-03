@@ -19,7 +19,7 @@
           [class.active]="cat==selectedCategory" (click)="changeCategory(cat)">{{cat}}</button>
       </div>
     </div>
-    <div class="col-9 overflow-hidden">
+    <div class="col-9">
       <div *ngFor="let product of products" class="card bg-secondary mt-3 ml-1 mb-3">
         <h4 class="text-white m-3">
           {{product.name}}

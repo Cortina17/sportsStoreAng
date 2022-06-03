@@ -17,6 +17,7 @@
         <button class="btn btn-block btn-sm btn-warning mt-1" (click)="changeCategory()">HOME</button>
         <button *ngFor="let cat of categories" class="btn btn-block btn-warning btn-sm"
           [class.active]="cat==selectedCategory" (click)="changeCategory(cat)">{{cat}}</button>
+        <button class="btn btn-block btn-danger mt-5" routerLink="/admin">Admin Area</button>
       </div>
     </div>
     <div class="col-9">

@@ -1,3 +1,4 @@
+import { AdminModule } from './../admin/admin.module';
 import { RestDataSource } from './../model/rest.datasource';
 import { StoreFirstGuard } from './storeFirst.guard';
 import { CheckoutComponent } from './../store/checkout.component';
@@ -16,6 +17,11 @@ import { RouterModule } from '@angular/router';
       { path: 'store', component: StoreComponent, canActivate: [StoreFirstGuard] },
       { path: 'cart', component: CartDetailComponent, canActivate: [StoreFirstGuard] },
       { path: 'checkout', component: CheckoutComponent, canActivate: [StoreFirstGuard] },
+      {
+        path: "admin", loadChildren: () =>
+
+          import("../admin/admin.module").then(m => m.AdminModule), canActivate: [StoreFirstGuard]
+      },
       { path: '**', redirectTo: '/store' }
     ])],
   providers: [StoreFirstGuard, RestDataSource],

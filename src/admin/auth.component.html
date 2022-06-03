@@ -4,3 +4,9 @@
 <div **ngIf="errorMessage !=null" class="bg-danger mt-2 text-center text-white">
   {{errorMessage}}
 </div>
+<div class="p-2">
+  <form novalidate #form="ngForm" (ngSubmit)="authenticate(form)">
+    <input type="text">
+    <input type="text">
+  </form>
+</div>

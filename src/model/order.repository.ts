@@ -6,7 +6,7 @@ import { Observable } from 'rxjs';
 @Injectable()
 export class OrderRepository {
 
-  private orders: Order[] = null;
+  private orders: Order[] = [];
 
   constructor(private dataSource: StaticDataSource) { }
 
@@ -14,7 +14,7 @@ export class OrderRepository {
     return this.orders;
   }
 
-  saveOrders(order: Order): Observable<Order> {
+  saveOrder(order: Order): Observable<Order> {
     return this.dataSource.saveOrder(order);
 
   }

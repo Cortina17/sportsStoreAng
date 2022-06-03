@@ -1,62 +1,61 @@
 <div class="container-fluid bg-light">
-  <div class="row sticky-top bg-dark text-white">
-    <a class="navbar-brand p-2 mt-1 fw-bold fs-6">SPORTS STORE</a>
-    <div class="d-flex justify-content-around align-items-center col bg-dark">
-      <cart-summary></cart-summary>
-    </div>
+  <div class="row sticky-top bg-dark text-white d-flex justify-content-between align-items-center">
+    <a class="navbar-brand p-2">SPORTS STORE</a>
+    <cart-summary></cart-summary>
   </div>
+</div>
 
-  <!--
+<!--
   <div class="row text-white">
     <div class="col-3 bg-info p-2">{{categories.length}} Categorías</div>
     <div class="col-9 bg-success p-2">{{products.length}} Productos</div>
   </div-->
-  <!-- {{products | json}} -->
+<!-- {{products | json}} -->
 
-  <div class="row">
-    <div class="col-3 p-2 bg-info">
-      <button class="btn btn-block btn-warning mt-1" (click)="changeCategory()">HOME</button>
-      <button *ngFor="let cat of categories" class="btn btn-block btn-warning" [class.active]="cat==selectedCategory"
-        (click)="changeCategory(cat)">{{cat}}</button>
-    </div>
-    <div class="col-9 p-2">
-      <div *ngFor="let product of products" class="card m-1 bg-secondary mb-3">
-        <h4 class="text-white m-3 align-middle">
-          {{product.name}}
-          <span class="badge badge-pill badge-info float-right mr-3">
-            {{product.price | currency:"USD":"symbol":"2.2-2"}}
-          </span>
-        </h4>
+<div class="row">
+  <div class="col-3 p-2 bg-info d-flex justify-content-center align-items-center">
+    <button class="btn btn-warning" (click)="changeCategory()">HOME</button>
+    <button *ngFor="let cat of categories" class="btn btn-warning btn-sm" [class.active]="cat==selectedCategory"
+      (click)="changeCategory(cat)">{{cat}}</button>
+  </div>
+  <div class="col-9 p-2">
+    <div *ngFor="let product of products" class="card m-1 bg-secondary mb-3">
+      <h4 class="text-white m-3 align-middle">
+        {{product.name}}
+        <span class="badge badge-pill badge-info float-right mr-3">
+          {{product.price | currency:"USD":"symbol":"2.2-2"}}
+        </span>
+      </h4>
 
-        <!-- <span class="badge badge-pill badge-primary float-left">
+      <!-- <span class="badge badge-pill badge-primary float-left">
               {{product.price | agregarImpuesto:(20)}} recibe 20, si no coge el valor default
             </span> -->
 
-        <div class="card-text bg-white p-1">
-          {{product.description}}
-          <button class="btn btn-success float-right m-3" (click)="addToCart(product)">Add to cart</button>
-        </div>
+      <div class="card-text bg-white p-1">
+        {{product.description}}
+        <button class="btn btn-success float-right m-3" (click)="addToCart(product)">Add to cart</button>
+      </div>
+    </div>
+
+    <div class="d-flex justify-content-around">
+      <div class="mr-auto p-2">
+        <select class="form-control" [value]="productsPerPage" (change)="changePageSize($event.target.value)">
+          <option value="3">3 per Page</option>
+          <option value="5">5 per Page</option>
+          <option value="7">7 per Page</option>
+          <option value="10">10 per Page</option>
+        </select>
       </div>
 
-      <div class="d-flex justify-content-around">
-        <div class="mr-auto p-2">
-          <select class="form-control" [value]="productsPerPage" (change)="changePageSize($event.target.value)">
-            <option value="3">3 per Page</option>
-            <option value="5">5 per Page</option>
-            <option value="7">7 per Page</option>
-            <option value="10">10 per Page</option>
-          </select>
-        </div>
-
-        <div class="btn-group float-right ml-auto p-2">
-          <!-- <button *ngFor="let page of pageNumbers" (click)="changePage(page)" class="btn btn-outline-primary"
+      <div class="btn-group float-right ml-auto p-2">
+        <!-- <button *ngFor="let page of pageNumbers" (click)="changePage(page)" class="btn btn-outline-primary"
             [class.active]="page == selectedPage">
             {{page}}
           </button> -->
-          <button *counter="let page of pageCount" (click)="changePage(page)" class="btn btn-info">{{page}}</button>
-        </div>
-        <!-- <div class="row">
-          <div class="col-3 bg-info p-2 text-white">Actualmente tenemos {{categories.length}} Categorías -->
+        <button *counter="let page of pageCount" (click)="changePage(page)" class="btn btn-info">{{page}}</button>
       </div>
+      <!-- <div class="row">
+          <div class="col-3 bg-info p-2 text-white">Actualmente tenemos {{categories.length}} Categorías -->
     </div>
   </div>
+</div>

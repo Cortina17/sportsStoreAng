@@ -1,4 +1,3 @@
-import { Observable } from 'rxjs';
 import { Order } from './../model/order.model';
 import { OrderRepository } from './../model/order.repository';
 import { Component } from "@angular/core";
@@ -6,7 +5,8 @@ import { NgForm } from '@angular/forms';
 
 @Component({
   //template: `<div><h3 class="bg-info p-1 text-white">Checkout Component</h3></div>`
-  templateUrl: "./checkout.component.html"
+  templateUrl: "./checkout.component.html",
+  styleUrls: ["checkout.component.css"]
 })
 export class CheckoutComponent {
 

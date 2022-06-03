@@ -14,9 +14,11 @@
 
 <div class="row">
   <div class="col-3 p-2 bg-info">
-    <button class="btn btn-block btn-warning mt-1" (click)="changeCategory()">HOME</button>
-    <button *ngFor="let cat of categories" class="btn btn-block btn-warning btn-sm"
-      [class.active]="cat==selectedCategory" (click)="changeCategory(cat)">{{cat}}</button>
+    <div class="ml-3 mr-1">
+      <button class="btn btn-block btn-sm btn-warning mt-1" (click)="changeCategory()">HOME</button>
+      <button *ngFor="let cat of categories" class="btn btn-block btn-warning btn-sm"
+        [class.active]="cat==selectedCategory" (click)="changeCategory(cat)">{{cat}}</button>
+    </div>
   </div>
   <div class="col-9 p-2">
     <div *ngFor="let product of products" class="card m-1 bg-secondary mb-3">

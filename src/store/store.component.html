@@ -13,16 +13,17 @@
 <!-- {{products | json}} -->
 
 <div class="row">
-  <div class="col-3 p-2 bg-info">
+  <!--por que hay padding?-->
+  <div class="col-3 bg-info">
     <div class="ml-3 mr-1">
       <button class="btn btn-block btn-sm btn-warning mt-1" (click)="changeCategory()">HOME</button>
       <button *ngFor="let cat of categories" class="btn btn-block btn-warning btn-sm"
         [class.active]="cat==selectedCategory" (click)="changeCategory(cat)">{{cat}}</button>
     </div>
   </div>
-  <div class="col-9 pl-1 pr-3">
-    <div *ngFor="let product of products" class="card m-1 bg-secondary mb-3">
-      <h4 class="text-white m-3 align-middle">
+  <div class="col-9">
+    <div *ngFor="let product of products" class="card bg-secondary mt-3 ml-1 mb-3">
+      <h4 class="text-white m-3">
         {{product.name}}
         <span class="badge badge-pill badge-info float-right mr-3">
           {{product.price | currency:"USD":"symbol":"2.2-2"}}
@@ -40,7 +41,7 @@
     </div>
 
     <div class="d-flex justify-content-around">
-      <div class="mr-auto p-2">
+      <div class="mr-3 p-2">
         <select class="form-control" [value]="productsPerPage" (change)="changePageSize($event.target.value)">
           <option value="3">3 per Page</option>
           <option value="5">5 per Page</option>

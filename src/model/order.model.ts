@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 
 @Injectable()
 export class Order {
-
+  //objeto POJO
   public id: number;
   public name: string;
   public address: string;

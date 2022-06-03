@@ -1,3 +1,4 @@
+import { AuthGuard } from './auth.guard';
 import { AdminComponent } from './admin.component';
 import { RouterModule } from '@angular/router';
 import { AuthComponent } from './auth.component';
@@ -13,8 +14,8 @@ let routing = RouterModule.forChild([
 
 @NgModule({
   imports: [CommonModule, FormsModule, routing],
+  providers: [AuthGuard],
   declarations: [AuthComponent, AdminComponent]
 })
 
 export class AdminModule { }
-

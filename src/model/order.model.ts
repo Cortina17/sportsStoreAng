@@ -22,4 +22,5 @@ export class Order {
     this.shipped = null;
     this.cart.clear();
   }
+
 }

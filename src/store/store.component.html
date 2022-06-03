@@ -28,15 +28,15 @@
             {{product.price | currency:"USD":"symbol":"2.2-2"}}
           </span>
         </h4>
-        <div>
-          <img src="https://loremflickr.com/1080/1024?random" class="img-thumbnail img-fluid" />
-        </div>
 
         <!-- <span class="badge badge-pill badge-primary float-left">
           {{product.price | agregarImpuesto:(20)}} recibe 20, si no coge el valor default
         </span> -->
 
         <div class="card-text bg-white p-3">
+          <div class="w-50 h-50">
+            <img src="https://loremflickr.com/1080/1024?random" class="img-thumbnail img-fluid" />
+          </div>
           {{product.description}}
           <button class="btn btn-success float-right m-3" (click)="addToCart(product)">Add to cart</button>
         </div>

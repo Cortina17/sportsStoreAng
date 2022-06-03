@@ -64,6 +64,53 @@ module.exports = function () {
         description: "Gold-plated, diamond-studded King",
         price: 1200,
       },
+      {
+        id: 10,
+        name: "Soccer Scarf",
+        category: "Soccer",
+        description: "Soccer scarf of different teams and colors.",
+        price: 100,
+      },
+      {
+        id: 11,
+        name: "Product 11",
+        category: "Watersports",
+        description:
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In id nisi gravida, sollicitudin massa nec, facilisis lectus. Maecenas ultrices mi neque, eget bibendum enim condimentum vel. Maecenas porta massa sit amet nunc vestibulum, in feugiat est sagittis. Vestibulum eu nibh lorem. Vivamus turpis magna, semper eu consectetur ac, aliquam pharetra odio. Nam eu dolor eros. Donec lobortis sed urna non ultricies.",
+        price: 450,
+      },
+      {
+        id: 12,
+        name: "Product 12",
+        category: "Chess",
+        description:
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In id nisi gravida, sollicitudin massa nec, facilisis lectus. Maecenas ultrices mi neque, eget bibendum enim condimentum vel. Maecenas porta massa sit amet nunc vestibulum, in feugiat est sagittis. Vestibulum eu nibh lorem. Vivamus turpis magna, semper eu consectetur ac, aliquam pharetra odio. Nam eu dolor eros. Donec lobortis sed urna non ultricies.",
+        price: 4000,
+      },
+      {
+        id: 13,
+        name: "Product 13",
+        category: "Watersports",
+        description:
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In id nisi gravida, sollicitudin massa nec, facilisis lectus. Maecenas ultrices mi neque, eget bibendum enim condimentum vel. Maecenas porta massa sit amet nunc vestibulum, in feugiat est sagittis. Vestibulum eu nibh lorem. Vivamus turpis magna, semper eu consectetur ac, aliquam pharetra odio. Nam eu dolor eros. Donec lobortis sed urna non ultricies.",
+        price: 4000,
+      },
+      {
+        id: 14,
+        name: "Product 14",
+        category: "Watersports",
+        description:
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In id nisi gravida, sollicitudin massa nec, facilisis lectus. Maecenas ultrices mi neque, eget bibendum enim condimentum vel. Maecenas porta massa sit amet nunc vestibulum, in feugiat est sagittis. Vestibulum eu nibh lorem. Vivamus turpis magna, semper eu consectetur ac, aliquam pharetra odio. Nam eu dolor eros. Donec lobortis sed urna non ultricies.",
+        price: 4000,
+      },
+      {
+        id: 15,
+        name: "Product 15",
+        category: "Watersports",
+        description:
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In id nisi gravida, sollicitudin massa nec, facilisis lectus. Maecenas ultrices mi neque, eget bibendum enim condimentum vel. Maecenas porta massa sit amet nunc vestibulum, in feugiat est sagittis. Vestibulum eu nibh lorem. Vivamus turpis magna, semper eu consectetur ac, aliquam pharetra odio. Nam eu dolor eros. Donec lobortis sed urna non ultricies.",
+        price: 4000,
+      },
     ],
     orders: [],
   };

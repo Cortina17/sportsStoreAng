@@ -1,3 +1,4 @@
+import { RestDataSource } from './../model/rest.datasource';
 import { StoreFirstGuard } from './storeFirst.guard';
 import { CheckoutComponent } from './../store/checkout.component';
 import { CartDetailComponent } from './../store/cartDetail.component';
@@ -17,7 +18,7 @@ import { RouterModule } from '@angular/router';
       { path: 'checkout', component: CheckoutComponent, canActivate: [StoreFirstGuard] },
       { path: '**', redirectTo: '/store' }
     ])],
-  providers: [StoreFirstGuard],
+  providers: [StoreFirstGuard, RestDataSource],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

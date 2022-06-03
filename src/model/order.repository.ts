@@ -1,4 +1,4 @@
-import { StaticDataSource } from './static.datasource';
+import { RestDataSource } from './rest.datasource';
 import { Injectable } from "@angular/core";
 import { Order } from "./order.model";
 import { Observable } from 'rxjs';
@@ -8,7 +8,8 @@ export class OrderRepository {
 
   private orders: Order[] = [];
 
-  constructor(private dataSource: StaticDataSource) { }
+  //constructor(private dataSource: StaticDataSource) { }
+  constructor(private dataSource: RestDataSource) { }
 
   getOrders() {
     return this.orders;

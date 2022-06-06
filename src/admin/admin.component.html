@@ -2,4 +2,20 @@
   <div class="row bg-dark text-white d-flex justify-content-between align-items-center">
     <a class="navbar-brand p-2 text-white link-light" routerLink="/store">SPORTS STORE</a>
   </div>
+
+  <div class="row mt-2">
+    <div class="col-3">
+      <div class="btn-group-vertical" role="group">
+        <button type="button" class="btn btn-primary" routerLink="admin/main/products"
+          routerLinkActive="active">Catalogue</button>
+        <button type="button" class="btn btn-primary" routerLink="admin/main/orders" routerLinkActive="active">Order
+          catalogue</button>
+        <button type="button" class="btn btn-danger">Log Out</button>
+      </div>
+    </div>
+    <div class="col-9">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+
 </div>

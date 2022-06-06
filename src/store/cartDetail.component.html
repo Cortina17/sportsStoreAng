@@ -19,7 +19,7 @@
     </thead>
     <tbody class="text-center">
       <tr *ngFor="let line of cart.lines">
-        <td><input type="number" class="form-control-sm w-25 text-center" [value]="line.quantity"
+        <td><input type="number" min="0" class="form-control-sm w-25 text-center" [value]="line.quantity"
             (change)="cart.updateQuantity(line.product, $event.target.value)"></td>
         <td>{{line.product.name}}</td>
         <td class="text-center">{{line.product.price | currency:"USD":"symbol":"2.2-2"}}</td>

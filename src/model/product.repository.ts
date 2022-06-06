@@ -37,10 +37,16 @@ export class ProductRepository {
   }
 
   saveProduct(product: Product) {
-    if (product.id == null || product.id == 0) {//es para saber si esta dado de alta
-      this.dataSource.saveProduct(product).subscribe((p) => { this.products.push(p) })
+    if (product.id == null || product.id == 0) { // es para dar de alta
+      this.dataSource
+        .saveProduct(product)
+        .subscribe((p) => { this.products.push(p) });
     } else {
-
+      // estoy haciendo una modificacion de un producto que ya existe
+      this.dataSource
+        .updateProduct(product)
+        .subscribe((p) => this.products.splice(
+          this.products.findIndex((p) => p.id == product.id), 1, product));
     }
   }
-}
+

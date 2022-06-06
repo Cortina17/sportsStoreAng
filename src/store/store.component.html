@@ -25,6 +25,8 @@
         <h4 class="text-white m-3">
           {{product.name}}
           <span class="badge badge-pill badge-info float-right mr-3">
+            {{product.price+((product.price*21)/100) | currency:"USD":"symbol":"2.2-2"}} VAT</span>
+          <span class="badge badge-pill badge-info float-right mr-3">
             {{product.price | currency:"USD":"symbol":"2.2-2"}}
           </span>
         </h4>

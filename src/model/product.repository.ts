@@ -49,4 +49,4 @@ export class ProductRepository {
           this.products.findIndex((p) => p.id == product.id), 1, product));
     }
   }
-
+}

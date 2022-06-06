@@ -5,10 +5,10 @@ export class Product {
   //nombre?--> es opcional (se colocan al final del constructor)
 
   constructor(
-    public id: number,
-    public name: string,
-    public price: number,
-    public category: string,
+    public id?: number,
+    public name?: string,
+    public price?: number,
+    public category?: string,
     public description?: string,
   ) {
 

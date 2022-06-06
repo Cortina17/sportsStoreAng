@@ -1,21 +1,21 @@
 <table>
-
-  <head>
-    <tr></tr>
-    <th>ID</th>
-    <th>Name</th>
-    <th>Category</th>
-    <th>Price</th>
+  <thead>
+    <tr class=""></tr>
+    <th class="">ID</th>
+    <th class="">Name</th>
+    <th class="">Category</th>
+    <th class="">Price</th>
+    <th class="">Actions</th>
     <th></th>
-  </head>
-  <tbody>
-    <tr *ngFor="let p of getProducts()">
-      <td>{{p.id}}</td>
-      <td>{{p.name}}</td>
-      <td>{{p.cat}}</td>
-      <td>{{p.price | currency:'USD':'symbol':'2.2-2'}}</td>
+  </thead>
+  <tbody class="">
+    <tr class="" *ngFor="let p of getProducts()">
+      <td class="">{{p.id}}</td>
+      <td class="">{{p.name}}</td>
+      <td class="">{{p.category}}</td>
+      <td class="">{{p.price | currency:'USD':'symbol':'2.2-2'}}</td>
       <td>
-        <button class="btn btn-warning btn-sm" [routerLink]="['/admin/main/products/edit',p.id]">Edit</button>
+        <button class="btn btn-warning btn-sm ml-3 mr-3" [routerLink]="['/admin/main/products/edit',p.id]">Edit</button>
         <button class="btn btn-danger btn-sm" (click)="deleteProduct(p.id)">Delete</button>
       </td>
     </tr>

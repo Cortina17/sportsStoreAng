@@ -15,7 +15,7 @@ export class ProductTableComponent {
     return this.repository.getProducts();
   }
 
-  deleteProducts(id: number) {
+  deleteProduct(id: number) {
     this.repository.deleteProduct(id);
   }
 }

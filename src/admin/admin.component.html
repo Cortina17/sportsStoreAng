@@ -6,16 +6,16 @@
   <div class="row mt-2">
     <div class="col-3">
       <div class="btn-group-vertical" role="group">
-        <button type="button" class="btn btn-primary" routerLink="admin/main/products"
+        <button type="button" class="btn btn-outline-info btn-block" routerLink="admin/main/products"
           routerLinkActive="active">Catalogue</button>
-        <button type="button" class="btn btn-primary" routerLink="admin/main/orders" routerLinkActive="active">Order
+        <button type="button" class="btn btn-outline-info btn-block" routerLink="admin/main/orders"
+          routerLinkActive="active">Order
           catalogue</button>
-        <button type="button" class="btn btn-danger">Log Out</button>
+        <button type="button" class="btn btn-danger btn-block" (click)="logOut()">Log Out</button>
       </div>
     </div>
     <div class="col-9">
       <router-outlet></router-outlet>
     </div>
   </div>
-
 </div>

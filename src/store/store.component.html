@@ -34,14 +34,15 @@
         </span> -->
 
         <div class="card-text bg-white p-3 d-flex justify-content-between h-20 w-20">
-          <div class="mr-2 border max-w-10 max-h-10">
+          <div class="mr-2 border w-25">
             <img src="https://loremflickr.com/1080/1024?random" class="float-left img-fluid mr-2 " />
           </div>
           <div>
             {{product.description}}
           </div>
-          <div>
-            <button class="btn btn-success float-right m-3" (click)="addToCart(product)">Add to cart</button>
+          <div class="d-flex align-items-center">
+            <button class="btn btn-success btn block float-right m-3" (click)="addToCart(product)"><i
+                class="fa fa-cart-plus m-3"></i></button>
           </div>
         </div>
       </div>

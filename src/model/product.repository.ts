@@ -29,4 +29,16 @@ export class ProductRepository {
   getProducts(category: string = null): Product[] {
     return this.products.filter((p) => category == null || category == p.category)
   }
+
+  deleteProduct(id: number) {
+    this.dataSource.deleteProduct(id).subscribe(p => {
+      this.products.splice(this.products.findIndex((p) => p.id == id))
+    });
+  }
+
+  saveProduct(product: Product) {
+    if (product.id == null || product.id == 0) {//es para saber si esta dado de alta
+      this.dataSource.saveProduct(product).subscribe((p) => { this.products.push(p) })
+    } else { }
+  }
 }

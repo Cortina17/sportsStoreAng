@@ -22,6 +22,7 @@ export class RestDataSource {
       name: user, password: pass
     }).pipe(map(response => {
       this.auth_token = response.success ? response.token : null;
+      console.log("Mi token es: " + this.auth_token);
       return response.success;
     }));
   }
